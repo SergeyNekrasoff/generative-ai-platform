@@ -15,7 +15,7 @@ import { useHead } from '@unhead/vue'
 // import { BookSearch } from '@/features/book'
 
 useHead({
-  title: 'textailor - Home'
+  title: 'Home'
 })
 
 // const bookModel = useBookModel()

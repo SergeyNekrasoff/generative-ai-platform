@@ -5,6 +5,7 @@
 
     <main class="d-flex align-center justify-center" fill-height>
       <slot />
+      NOT SIDEBAR
     </main>
 
     <slot name="footer"></slot>
