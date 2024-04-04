@@ -12,9 +12,9 @@
       <router-view />
     </template>
 
-    <template v-slot:footer>
+    <!-- <template v-slot:footer>
       <Footer />
-    </template>
+    </template> -->
   </component>
 </template>
 
@@ -32,5 +32,24 @@ const layout = computed(() => route.meta.layout || DefaultLayout)
 </script>
 
 <style lang="scss">
+.layout {
+  display: grid;
+  header {
+    grid-area: header;
+  }
+  nav {
+    grid-area: navigation;
+  }
+  main {
+    grid-area: main;
+  }
+  //footer {
+  //  grid-area: footer;
+  //}
+  grid-template-areas:
+    'header header'
+    'nav main';
+}
+
 @import './styles/index.scss';
 </style>

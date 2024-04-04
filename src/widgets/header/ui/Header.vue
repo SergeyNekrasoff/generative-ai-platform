@@ -1,20 +1,21 @@
 <template>
-  <header class="header">
-    <div class="flex items-center justify-end p-4">
-      <div class="flex items-center justify-center w-[90%]">
+  <header class="header border-b border-divider_dark_2">
+    <div class="flex items-center justify-between h-8">
+      <Logo class="scale-[0.9]" />
+      <div class="flex items-center justify-center w-1/3">
         <div
-          class="flex justify-center min-w-[50%] text-center rounded-full border border-divider_dark_1 py-1.5 text-lg font-bold"
+          class="flex justify-center min-w-[40%] text-center rounded-full border border-divider_dark_2 py-1 text-sm font-bold ml-4"
         >
           HOME
         </div>
       </div>
       <div class="flex items-center justify-end">
         <button type="button">
-          <BellIcon class="h-6 w-6 pointer" @click="toggleNotification" />
+          <BellIcon class="h-5 w-5 pointer" @click="toggleNotification" />
         </button>
         <Theme />
         <button type="button">
-          <QuestionMarkCircleIcon class="h-6 w-6 pointer" @click="toggleHelp" />
+          <QuestionMarkCircleIcon class="h-5 w-5 pointer" @click="toggleHelp" />
         </button>
       </div>
     </div>
@@ -23,6 +24,7 @@
 
 <script setup lang="ts">
 import { Theme } from '@/widgets/theme'
+import { Logo } from '@/shared/ui/logo'
 import { BellIcon } from '@heroicons/vue/24/solid'
 import { QuestionMarkCircleIcon } from '@heroicons/vue/24/solid'
 

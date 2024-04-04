@@ -1,5 +1,5 @@
 <template>
-  <div ref="app">
+  <div class="layout" ref="app">
     <slot name="header"></slot>
     <slot name="navigation"></slot>
 

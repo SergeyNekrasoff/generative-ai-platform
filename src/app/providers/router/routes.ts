@@ -6,19 +6,27 @@ export const routes = [
     name: 'home',
     component: () => import('@/pages/home')
   },
-  //   {
-  //     path: '/project/:id',
-  //     component: () => import('@/pages/project')
-  //   },
-  //   {
-  //     path: '/history',
-  //     component: () => import('@/pages/history')
-  //   },
-  //   {
-  //     path: '/account',
-  //     name: 'account',
-  //     component: () => import('@/pages/account')
-  //   },
+  {
+    path: '/projects',
+    component: () => import('@/pages/project')
+  },
+  {
+    path: '/project/:id',
+    component: () => import('@/pages/project')
+  },
+  {
+    path: '/templates',
+    component: () => import('@/pages/templates')
+  },
+  {
+    path: '/history',
+    component: () => import('@/pages/history')
+  },
+  {
+    path: '/account',
+    name: 'account',
+    component: () => import('@/pages/account')
+  },
   {
     path: '/:pathMatch(.*)',
     component: () => import('@/pages/not-found'),
