@@ -1,7 +1,7 @@
 <template>
   <component :is="layout">
     <template v-slot:header>
-      <TheHeader />
+      <Header />
     </template>
 
     <template v-slot:navigation>
@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { TheHeader } from '@/widgets/header'
+import { Header } from '@/widgets/header'
 import { Navigation } from '@/widgets/navigation'
 import { Footer } from '@/widgets/footer'
 import { DefaultLayout } from '@/shared/ui/layouts'

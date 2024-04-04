@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded rounded-md" ref="app">
+  <div ref="app">
     <slot name="header"></slot>
     <slot name="navigation"></slot>
 

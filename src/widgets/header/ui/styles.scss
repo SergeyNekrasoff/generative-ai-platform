@@ -1,5 +1,5 @@
 .header {
-  position: relative;
+  @apply h-24 relative;
 }
 
 // @media (max-width: $breakpoint-s) {

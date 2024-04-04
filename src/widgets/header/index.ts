@@ -1,3 +1,3 @@
-import TheHeader from './ui/TheHeader.vue'
+import Header from './ui/Header.vue'
 
-export { TheHeader }
+export { Header }
