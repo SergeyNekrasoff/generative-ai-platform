@@ -4,28 +4,58 @@ export const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('@/pages/home')
+    component: () => import('@/pages/home'),
+    meta: {
+      head: 'HOME'
+    }
   },
   {
     path: '/projects',
-    component: () => import('@/pages/project')
+    name: 'projects',
+    component: () => import('@/pages/project'),
+    meta: {
+      head: 'PROJECTS'
+    }
   },
   {
     path: '/project/:id',
-    component: () => import('@/pages/project')
+    name: 'project',
+    component: () => import('@/pages/project'),
+    meta: {
+      head: 'PROJECT'
+    }
   },
   {
     path: '/templates',
-    component: () => import('@/pages/templates')
+    name: 'templates',
+    component: () => import('@/pages/templates'),
+    meta: {
+      head: 'TEMPLATES'
+    }
   },
   {
     path: '/history',
-    component: () => import('@/pages/history')
+    name: 'history',
+    component: () => import('@/pages/history'),
+    meta: {
+      head: 'HISTORY'
+    }
   },
   {
     path: '/account',
     name: 'account',
-    component: () => import('@/pages/account')
+    component: () => import('@/pages/account'),
+    meta: {
+      head: 'ACCOUNT'
+    }
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: () => import('@/pages/settings'),
+    meta: {
+      head: 'SETTINGS'
+    }
   },
   {
     path: '/:pathMatch(.*)',

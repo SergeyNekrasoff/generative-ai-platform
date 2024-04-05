@@ -4,9 +4,9 @@
       <Logo class="scale-[0.9]" />
       <div class="flex items-center justify-center w-1/3">
         <div
-          class="flex justify-center min-w-[40%] text-center rounded-full border border-divider_dark_2 py-1 text-sm font-bold ml-4"
+          class="flex justify-center min-w-[40%] text-center rounded-lg border border-divider_dark_2 py-1 text-base font-bold ml-4 text-gray_dark_1"
         >
-          HOME
+          {{ routeName }}
         </div>
       </div>
       <div class="flex items-center justify-end">
@@ -27,6 +27,8 @@ import { Theme } from '@/widgets/theme'
 import { Logo } from '@/shared/ui/logo'
 import { BellIcon } from '@heroicons/vue/24/solid'
 import { QuestionMarkCircleIcon } from '@heroicons/vue/24/solid'
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
 
 const toggleNotification = (): void => {
   console.log(`toggle notifications`)
@@ -35,6 +37,10 @@ const toggleNotification = (): void => {
 const toggleHelp = (): void => {
   console.log(`toggle help`)
 }
+
+const route = useRoute()
+
+const routeName = computed(() => route.meta.head)
 </script>
 
 <style lang="scss">

@@ -1,26 +1,80 @@
 <template>
-  <section class="navigation">
-    <div class="flex items-start justify-between">
+  <section class="navigation light:bg-gray_dark_1">
+    <div class="flex items-start justify-between w-full">
       <ul class="navigation__list">
-        <li>
-          <router-link to="/">Home</router-link>
+        <li
+          class="flex items-center justify-start mt-8 w-full hover:bg-divider_dark_2 py-2 px-4 rounded-md"
+        >
+          <HomeIcon class="h-5 w-5 mr-2 text-text_dark_2" />
+          <router-link to="/" class="text-lg font-bold pt-1 w-full">Home</router-link>
         </li>
-        <li>
-          <hr />
+        <li class="mb-16">
+          <hr class="text-divider_dark_2" />
         </li>
-        <li>
-          <router-link to="/projects">Projects</router-link>
+        <li class="text-xs py-2 text-text_light_4">Workspace</li>
+        <li
+          class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
+        >
+          <DocumentTextIcon class="h-5 w-5 mr-2 text-text_dark_2" />
+          <router-link to="/projects" class="text-lg font-bold pt-1 w-full">Projects</router-link>
         </li>
-        <li>
-          <router-link to="/templates">Templates</router-link>
+        <li
+          class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
+        >
+          <RectangleStackIcon class="h-5 w-5 mr-2 text-text_dark_2" />
+          <router-link to="/templates" class="text-lg font-bold pt-1 w-full">Templates</router-link>
+        </li>
+        <li
+          class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
+        >
+          <DocumentMagnifyingGlassIcon class="h-5 w-5 mr-2 text-text_dark_2" />
+          <router-link to="/history" class="text-lg font-bold pt-1 w-full">History</router-link>
         </li>
       </ul>
     </div>
-    <div>Navigation</div>
+    <div class="flex items-start justify-between w-full">
+      <ul class="navigation__list">
+        <li class="text-xs py-2 text-text_light_4">Settings</li>
+        <li class="flex items-center justify-start w-full py-2 px-2 rounded-md">
+          <BookOpenIcon class="h-5 w-5 mr-2 text-text_dark_2" />
+          242 words used
+        </li>
+        <li
+          class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
+        >
+          <Cog8ToothIcon class="h-5 w-5 mr-2 text-text_dark_2" />
+          <router-link to="/settings" class="pt-1 w-full">Settings</router-link>
+        </li>
+        <li
+          class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md mb-10"
+        >
+          <PlusIcon class="h-5 w-5 mr-2 text-text_dark_2" />
+          <button type="button" class="pt-1">Invite members</button>
+        </li>
+        <li
+          class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
+        >
+          <span class="flex items-center justify-center h-8 w-10 rounded-full bg-purple mr-2">
+            J
+          </span>
+          <router-link to="/account" class="pt-1 w-full">Judixel89</router-link>
+          <ChevronRightIcon class="h-5 w-5" />
+        </li>
+      </ul>
+    </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { HomeIcon } from '@heroicons/vue/24/solid'
+import { DocumentTextIcon } from '@heroicons/vue/24/solid'
+import { RectangleStackIcon } from '@heroicons/vue/24/solid'
+import { BookOpenIcon } from '@heroicons/vue/24/solid'
+import { Cog8ToothIcon } from '@heroicons/vue/24/solid'
+import { PlusIcon } from '@heroicons/vue/24/solid'
+import { ChevronRightIcon } from '@heroicons/vue/24/solid'
+import { DocumentMagnifyingGlassIcon } from '@heroicons/vue/24/solid'
+</script>
 
 <style lang="scss">
 @import 'styles';

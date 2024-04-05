@@ -1,4 +1,8 @@
 .navigation {
-  @apply flex flex-col items-start justify-between pl-6 py-4 pr-4 w-[360px] border-r border-divider_dark_2 bg-black_soft;
+  @apply flex flex-col items-start justify-between px-6 py-4 w-[320px] border-r border-divider_dark_2;
   height: calc(100vh - 48px);
+
+  &__list {
+    @apply w-full;
+  }
 }

@@ -1,11 +1,11 @@
 <template>
-  <div>Templates</div>
+  <div>Settings</div>
 </template>
 
 <script setup lang="ts">
 import { useHead } from '@unhead/vue'
 
 useHead({
-  title: 'Workflow | Templates '
+  title: 'Settings'
 })
 </script>
