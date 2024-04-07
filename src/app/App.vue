@@ -15,6 +15,10 @@
     <!-- <template v-slot:footer>
       <Footer />
     </template> -->
+
+    <template v-slot:tools>
+      <BaseModal />
+    </template>
   </component>
 </template>
 
@@ -25,6 +29,7 @@ import { Header } from '@/widgets/header'
 import { Navigation } from '@/widgets/navigation'
 import { Footer } from '@/widgets/footer'
 import { DefaultLayout } from '@/shared/ui/layouts'
+import { BaseModal } from '@/shared/ui/modal'
 
 const route = useRoute()
 

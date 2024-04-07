@@ -49,12 +49,12 @@
           class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md mb-10"
         >
           <PlusIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-          <button type="button" class="pt-1">Invite members</button>
+          <button type="button" class="pt-1" @click="openModal">Invite members</button>
         </li>
         <li
           class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
         >
-          <span class="flex items-center justify-center h-8 w-10 rounded-full bg-purple mr-2">
+          <span class="flex items-center justify-center h-8 w-10 rounded-full bg-purple mr-3">
             J
           </span>
           <router-link to="/account" class="pt-1 w-full">Judixel89</router-link>
@@ -74,6 +74,10 @@ import { Cog8ToothIcon } from '@heroicons/vue/24/solid'
 import { PlusIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 import { DocumentMagnifyingGlassIcon } from '@heroicons/vue/24/solid'
+
+const openModal = () => {
+  console.log(`open modal`)
+}
 </script>
 
 <style lang="scss">
