@@ -1,1 +1,1 @@
-export { default as ModalContainer } from './ModalContainer.vue'
+export { default as ContainerModal } from './ContainerModal.vue'

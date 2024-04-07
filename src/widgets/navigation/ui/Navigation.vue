@@ -66,6 +66,8 @@
 </template>
 
 <script setup lang="ts">
+import { defineAsyncComponent } from 'vue'
+
 import { HomeIcon } from '@heroicons/vue/24/solid'
 import { DocumentTextIcon } from '@heroicons/vue/24/solid'
 import { RectangleStackIcon } from '@heroicons/vue/24/solid'
@@ -75,8 +77,14 @@ import { PlusIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 import { DocumentMagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 
-const openModal = () => {
-  console.log(`open modal`)
+import { useModal } from '@/shared/lib/use/modal/useModal'
+
+const InviteModal = defineAsyncComponent(() => import('@/shared/ui/modal/invite/InviteModal.vue'))
+
+const modal = useModal()
+
+const openModal = async () => {
+  modal.show({ component: InviteModal })
 }
 </script>
 

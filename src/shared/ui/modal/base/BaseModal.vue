@@ -1,5 +1,5 @@
 <template>
-  <teleport to="body">
+  <teleport :to="targetTeleport">
     <div class="modal">
       <div ref="modalRef" class="modal__inner">
         <div v-if="$slots.header" class="modal__header">
@@ -18,17 +18,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { targetTeleport } from '@/shared/lib/use/modal/useModal'
 import { onClickOutside } from '@vueuse/core'
-// import { targetTeleport } from '@/composable/useModal'
 
 const emit = defineEmits(['close'])
-const modalRef = ref(null)
+const modalRef = ref()
 
 onClickOutside(modalRef, () => {
   emit('close')
 })
 </script>
-
-<style lang="scss">
-@import 'styles';
-</style>

@@ -16,8 +16,8 @@
       <Footer />
     </template> -->
 
-    <template v-slot:tools>
-      <BaseModal />
+    <template v-slot:widgets>
+      <ContainerModal />
     </template>
   </component>
 </template>
@@ -27,9 +27,9 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { Header } from '@/widgets/header'
 import { Navigation } from '@/widgets/navigation'
-import { Footer } from '@/widgets/footer'
+// import { Footer } from '@/widgets/footer'
 import { DefaultLayout } from '@/shared/ui/layouts'
-import { BaseModal } from '@/shared/ui/modal'
+import { ContainerModal } from '@/shared/ui/modal'
 
 const route = useRoute()
 

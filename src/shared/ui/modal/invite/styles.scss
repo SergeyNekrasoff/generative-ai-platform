@@ -1,0 +1,20 @@
+.modal {
+  @apply fixed inset-x-0 inset-y-0;
+  background: rgba(0, 0, 0, 0.3);
+
+  &__inner {
+    @apply flex flex-col justify-between items-center gap-1 bg-black_mute w-[620px] h-[420px] absolute inset-1/2 -translate-y-1/2 -translate-x-1/2 rounded-lg;
+  }
+
+  &__body {
+    @apply w-full flex justify-center;
+  }
+
+  &__footer {
+    @apply w-full flex gap-0.5 py-5 px-4 bg-gray rounded-b-lg;
+  }
+
+  &__header {
+    @apply w-full flex justify-center;
+  }
+}

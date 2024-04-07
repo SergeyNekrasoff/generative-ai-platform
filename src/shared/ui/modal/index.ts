@@ -1,1 +1,3 @@
-export * from './base'
+export { BaseModal } from './base'
+export { ContainerModal } from './container'
+export { InviteModal } from './invite'
