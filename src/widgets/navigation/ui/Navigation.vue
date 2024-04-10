@@ -1,5 +1,5 @@
 <template>
-  <section class="navigation light:bg-gray_dark_1">
+  <aside class="navigation light:bg-gray_dark_1">
     <div class="flex items-start justify-between w-full">
       <ul class="navigation__list">
         <li
@@ -8,7 +8,7 @@
           <HomeIcon class="h-5 w-5 mr-2 text-text_dark_2" />
           <router-link to="/" class="text-lg font-bold pt-1 w-full">Home</router-link>
         </li>
-        <li class="mb-16">
+        <li class="mb-16 mt-4">
           <hr class="text-divider_dark_2" />
         </li>
         <li class="text-xs py-2 text-text_dark_3">Workspace</li>
@@ -23,6 +23,21 @@
         >
           <RectangleStackIcon class="h-5 w-5 mr-2 text-text_dark_2" />
           <router-link to="/templates" class="text-lg font-bold pt-1 w-full">Templates</router-link>
+        </li>
+        <li
+          class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
+        >
+          <ChatBubbleBottomCenterTextIcon class="h-5 w-5 mr-2 text-text_dark_2" />
+          <router-link to="/chat" class="text-lg font-bold pt-1 w-full">Chat</router-link>
+        </li>
+        <li
+          class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
+        >
+          <PencilSquareIcon class="h-5 w-5 mr-2 text-text_dark_2" />
+          <router-link to="/chat" class="text-lg font-bold pt-1 w-full">Editor</router-link>
+        </li>
+        <li class="mb-4 mt-4">
+          <hr class="text-divider_dark_2" />
         </li>
         <li
           class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
@@ -62,7 +77,7 @@
         </li>
       </ul>
     </div>
-  </section>
+  </aside>
 </template>
 
 <script setup lang="ts">
@@ -76,8 +91,10 @@ import { Cog8ToothIcon } from '@heroicons/vue/24/solid'
 import { PlusIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/solid'
 import { DocumentMagnifyingGlassIcon } from '@heroicons/vue/24/solid'
+import { ChatBubbleBottomCenterTextIcon } from '@heroicons/vue/24/solid'
+import { PencilSquareIcon } from '@heroicons/vue/24/solid'
 
-import { useModal } from '@/shared/lib/use/modal/useModal'
+import { useModal } from '@/shared/ui/modal/model/useModal'
 
 const InviteModal = defineAsyncComponent(() => import('@/shared/ui/modal/invite/InviteModal.vue'))
 

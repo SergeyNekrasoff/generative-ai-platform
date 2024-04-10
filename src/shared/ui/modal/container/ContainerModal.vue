@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { useModal } from '@/shared/lib/use/modal/useModal'
+import { useModal } from '@/shared/ui/modal/model/useModal'
 
 const { modals, hide } = useModal()
 </script>

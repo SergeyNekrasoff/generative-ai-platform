@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { targetTeleport } from '@/shared/lib/use/modal/useModal'
+import { targetTeleport } from '@/shared/ui/modal/model/useModal'
 import { onClickOutside } from '@vueuse/core'
 
 const emit = defineEmits(['close'])

@@ -39,21 +39,26 @@ const layout = computed(() => route.meta.layout || DefaultLayout)
 <style lang="scss">
 .layout {
   display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-template-areas:
+    'header header'
+    'navigation content';
+
   header {
     grid-area: header;
   }
+
   nav {
     grid-area: navigation;
   }
+
   main {
-    grid-area: main;
+    grid-area: content;
   }
+
   //footer {
   //  grid-area: footer;
   //}
-  grid-template-areas:
-    'header header'
-    'nav main';
 }
 
 @import './styles/index.scss';
