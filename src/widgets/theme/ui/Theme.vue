@@ -2,10 +2,10 @@
   <div class="flex items-center mx-4">
     <button @click="toggleDark()">
       <template v-if="isDark">
-        <SunIcon class="h-5 w-5" />
+        <MoonIcon class="h-5 w-5" />
       </template>
       <template v-else>
-        <MoonIcon class="h-5 w-5" />
+        <SunIcon class="h-5 w-5" />
       </template>
     </button>
   </div>
