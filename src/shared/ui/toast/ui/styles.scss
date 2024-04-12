@@ -1,0 +1,35 @@
+.toast {
+  @apply flex flex-col fixed bottom-1 right-2 z-50;
+
+  &__message {
+    @apply flex items-center justify-between text-sm gap-1 w-[420px] h-12 p-4 mb-2 text-white_soft rounded-md;
+    animation: slide-up 0.4s ease;
+
+    &_type-success {
+      @apply bg-green_dark shadow-md shadow-green_darker;
+    }
+
+    &_type-error {
+      @apply bg-red_dark shadow-md shadow-red_darker;
+    }
+
+    &_type-info {
+      @apply bg-blue_dark shadow-md shadow-blue_darker;
+    }
+  }
+
+  &__text {
+    margin-right: auto;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

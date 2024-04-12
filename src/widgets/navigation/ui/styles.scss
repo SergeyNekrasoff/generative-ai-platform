@@ -1,6 +1,6 @@
 .navigation {
-  @apply flex flex-col items-start justify-between px-6 py-4 w-[280px] border-r border-divider_dark_2 bg-black_soft fixed h-full pt-20;
-  // height: calc(100vh - 48px);
+  @apply flex flex-col items-start justify-between px-6 py-4 w-[280px] border-r border-divider_dark_2 bg-black_soft fixed top-0 pt-20 z-10;
+  min-height: 100vh;
 
   &__list {
     @apply w-full;

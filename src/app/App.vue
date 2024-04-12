@@ -18,6 +18,7 @@
 
     <template v-slot:widgets>
       <ContainerModal />
+      <BaseToast />
     </template>
   </component>
 </template>
@@ -30,6 +31,7 @@ import { Navigation } from '@/widgets/navigation'
 // import { Footer } from '@/widgets/footer'
 import { DefaultLayout } from '@/shared/ui/layouts'
 import { ContainerModal } from '@/shared/ui/modal'
+import { BaseToast } from '@/shared/ui/toast'
 
 const route = useRoute()
 
