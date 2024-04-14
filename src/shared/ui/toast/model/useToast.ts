@@ -24,7 +24,7 @@ export interface UsableToast {
 const isOpen = ref(false)
 const messageList = ref<ToastMessage[]>([])
 
-const toast = ({ message, type = '', duration = 205000 }: ToastOptions) => {
+const toast = ({ message, type = '', duration = 5000 }: ToastOptions) => {
   isOpen.value = true
   messageList.value = [...messageList.value, { message, type }]
 
