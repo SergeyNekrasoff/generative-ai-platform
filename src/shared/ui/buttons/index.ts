@@ -5,4 +5,4 @@
 // export * from './ButtonRemove'
 // export * from './ButtonCross'
 // export * from './ButtonScrollTop'
-// export * from './ButtonSubmit'
+export * from './BaseButton'

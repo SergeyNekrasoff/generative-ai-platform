@@ -27,15 +27,15 @@
 
       <!-- Popular Templates -->
       <div class="mt-8 mb-16">
-        <div class="flex items-center justify-between">
-          <div class="text-2xl mb-4">Get started with Templates</div>
-          <button
-            type="button"
-            class="text-sm flex items-center justify-between border-2 border-rose-500 rounded-md p-2"
-          >
-            <RectangleStackIcon class="h-4 w-4 mr-2 text-text_dark_2" />
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-2xl">Get started with Templates</div>
+          <BaseButton>
+            <template v-slot:icon>
+              <RectangleStackIcon class="h-4 w-4 mr-2 text-text_dark_2" />
+            </template>
+
             Browse Template Library
-          </button>
+          </BaseButton>
         </div>
         <div class="flex items-start justify-start w-full gap-4">
           <div v-for="template in templates" :key="template.id" class="w-[20%] h-48">
@@ -80,6 +80,7 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue'
 import { BaseCarousel } from '@/shared/ui/carousel'
+import { BaseButton } from '@/shared/ui/buttons'
 import { RectangleStackIcon } from '@heroicons/vue/24/solid'
 
 const items = [
