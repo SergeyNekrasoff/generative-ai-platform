@@ -12,9 +12,17 @@ export const routes = [
   {
     path: '/projects',
     name: 'projects',
-    component: () => import('@/pages/project'),
+    component: () => import('@/pages/projects'),
     meta: {
       head: 'PROJECTS'
+    }
+  },
+  {
+    path: '/chat',
+    name: 'chat',
+    component: () => import('@/pages/chat'),
+    meta: {
+      head: 'CHAT'
     }
   },
   {
@@ -55,6 +63,14 @@ export const routes = [
     component: () => import('@/pages/settings'),
     meta: {
       head: 'SETTINGS'
+    }
+  },
+  {
+    path: '/ui-kit',
+    name: 'ui-kit',
+    component: () => import('@/pages/ui-kit'),
+    meta: {
+      head: 'UI Kit'
     }
   },
   {

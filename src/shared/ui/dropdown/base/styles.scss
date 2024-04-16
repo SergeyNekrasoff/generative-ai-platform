@@ -1,0 +1,31 @@
+.dropdown {
+  @apply relative w-fit;
+
+  &__toggle {
+    @apply flex cursor-pointer;
+  }
+
+  &__content {
+    @apply hidden absolute z-50 min-w-40 list-none p-2 rounded-md overflow-hidden my-2 border bg-black_mute border-black_mute transition ease-in-out;
+
+    .dropdown_open & {
+      @apply block;
+    }
+
+    .dropdown_align_right & {
+      @apply right-auto left-0;
+    }
+
+    .dropdown_align_right & {
+      @apply right-0 left-auto;
+    }
+
+    .dropdown_direction_down & {
+      @apply top-full bottom-auto;
+    }
+
+    .dropdown_direction_up & {
+      @apply top-auto bottom-full;
+    }
+  }
+}

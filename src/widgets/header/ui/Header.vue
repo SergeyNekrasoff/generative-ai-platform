@@ -11,9 +11,10 @@
       </div>
       <div class="flex items-center justify-end">
         <button type="button">
-          <BellIcon class="h-5 w-5 pointer" @click="toggleNotification" />
+          <BellIcon class="h-5 w-5 mr-2 pointer" @click="toggleNotification" />
         </button>
-        <Theme />
+        <!-- Temporary disabled -->
+        <!-- <Theme /> -->
         <button type="button">
           <QuestionMarkCircleIcon class="h-5 w-5 pointer" @click="toggleHelp" />
         </button>

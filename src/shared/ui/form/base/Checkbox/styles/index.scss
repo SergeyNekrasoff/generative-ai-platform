@@ -1,0 +1,103 @@
+@import 'mixins';
+
+.base-checkbox {
+  @apply relative cursor-pointer z-50;
+
+  &__label {
+    @apply text-white_mute;
+  }
+
+  &__icon-wrap {
+    @apply relative w-6 h-6 block;
+  }
+
+  &__icon-bg {
+    @apply text-blue;
+
+    path {
+      fill: var(--vt-c-blue-dark);
+    }
+  }
+
+  &__icon-checked {
+    @apply text-white_mute opacity-0 invisible transition-all duration-75 ease-in-out;
+  }
+
+  &:hover {
+    @include checkboxHover;
+  }
+
+  &__input {
+    @apply absolute w-[0.01px] h-[0.01px];
+
+    &:checked + .base-checkbox__icon-wrap {
+      @include checkboxChecked;
+    }
+
+    &:focus-visible + .base-checkbox__icon-wrap {
+      @include checkboxFocus;
+    }
+  }
+
+  &:active {
+    @include checkboxActive();
+  }
+
+  &.error {
+    .base-checkbox__label {
+      color: var(--color__red);
+    }
+
+    .base-checkbox__icon-bg {
+      color: var(--color__red);
+
+      path {
+        fill: var(--bg-color__error);
+      }
+    }
+
+    .base-checkbox__icon-checked {
+      color: var(--color__red);
+    }
+  }
+
+  &.disabled {
+    .base-checkbox__label {
+      color: var(--vt-c-gray);
+    }
+
+    .base-checkbox__icon-bg {
+      color: var(--vt-c-gray);
+      opacity: 0.7;
+      path {
+        fill: var(--vt-c-blue-dark);
+      }
+    }
+
+    .base-checkbox__icon-checked {
+      color: var(--vt-c-gray);
+    }
+  }
+
+  &__error {
+    @apply absolute top-full mt-1;
+  }
+}
+
+.base-checkbox {
+  &.focus {
+    @include checkboxFocus;
+  }
+
+  &.hover {
+    @include checkboxHover;
+  }
+
+  &.checked {
+    @include checkboxChecked;
+  }
+
+  &.active {
+    @include checkboxActive();
+  }
+}

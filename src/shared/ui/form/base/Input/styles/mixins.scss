@@ -1,0 +1,7 @@
+@mixin inputFocus() {
+  @apply border-blue;
+}
+
+@mixin inputHover() {
+  @apply border-red;
+}

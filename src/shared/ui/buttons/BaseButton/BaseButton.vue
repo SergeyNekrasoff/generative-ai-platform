@@ -23,7 +23,7 @@ interface IButtonBase {
   disabled?: boolean
 }
 
-const emits = defineEmits(['click'])
+const emit = defineEmits(['click'])
 
 const attrs = useAttrs()
 
@@ -33,25 +33,11 @@ const props = withDefaults(defineProps<IButtonBase>(), {
 
 const click = () => {
   if (!props.disabled) {
-    emits('click')
+    emit('click')
   }
 }
 </script>
 
 <style lang="scss">
 @import 'styles';
-
-.button-base {
-  @apply text-sm flex items-center justify-between rounded-md p-2 border border-gray_light_1 border-solid;
-
-  &__disabled {
-    @apply cursor-not-allowed bg-gray_light_1;
-
-    &:hover,
-    &:active,
-    &:focus {
-      @apply cursor-not-allowed bg-gray_light_3;
-    }
-  }
-}
 </style>

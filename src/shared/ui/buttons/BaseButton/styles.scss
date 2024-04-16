@@ -1,0 +1,13 @@
+.button-base {
+  @apply text-sm flex items-center justify-between rounded-md p-2 border-solid;
+
+  &__disabled {
+    @apply cursor-not-allowed bg-gray_light_1;
+
+    &:hover,
+    &:active,
+    &:focus {
+      @apply cursor-not-allowed bg-gray_light_3;
+    }
+  }
+}

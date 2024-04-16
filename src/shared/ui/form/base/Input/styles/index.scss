@@ -1,0 +1,76 @@
+@import 'mixins';
+
+.base-input {
+  @apply relative flex flex-col items-start justify-center w-full h-[38px];
+
+  &__wrap {
+    @apply flex items-center justify-between w-full py-2 px-3 rounded-md border border-gray_dark_1 text-white_mute bg-gray_dark_4 transition duration-100 ease-in-out;
+  }
+
+  &__label {
+    @apply relative max-w-max;
+
+    &.required::after {
+      content: '*';
+      @apply absolute top-0 -right-[10px] text-sm;
+    }
+  }
+
+  &__field {
+    @apply w-full text-text_dark_1 font-light;
+
+    &::placeholder {
+      @apply text-text_light_4 text-sm font-light;
+    }
+
+    &:focus-visible {
+      @include inputFocus;
+    }
+    &:hover {
+      @include inputHover;
+    }
+
+    &:disabled {
+      @apply text-white_mute bg-black_mute border-black_mute;
+    }
+  }
+
+  &__error {
+    @apply absolute top-full text-red_dark mt-1;
+  }
+
+  &.error {
+    .base-input__wrap {
+      @apply border-red_dark;
+    }
+
+    .base-input__label {
+      color: var(--color__red);
+    }
+
+    .base-input__field {
+      &::placeholder {
+        @apply text-red_light;
+      }
+    }
+  }
+
+  &.disabled {
+    .base-input__wrap {
+      @apply text-white_mute;
+    }
+  }
+}
+
+.base-input {
+  &.focus {
+    .base-input__field {
+      @include inputFocus;
+    }
+  }
+  &.hover {
+    .base-input__field {
+      @include inputHover;
+    }
+  }
+}
