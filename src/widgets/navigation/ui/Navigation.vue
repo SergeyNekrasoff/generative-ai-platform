@@ -2,7 +2,7 @@
   <Transition name="fade" mode="out-in">
     <aside v-if="!collapsed" class="navigation light:bg-gray_dark_1">
       <div
-        class="absolute left-[325px] top-24 hidden -translate-x-14 rotate-90 transform cursor-pointer flex-row items-center justify-center rounded-t-md bg-black_mute px-3 py-1 text-sm text-white shadow-overlay duration-300 lg:flex z-50 border-r border-t border-l border-divider_dark_2 hover:bg-black_soft"
+        class="absolute left-[325px] top-16 hidden -translate-x-14 rotate-90 transform cursor-pointer flex-row items-center justify-center rounded-t-md bg-black_mute px-3 py-1 text-sm text-white shadow-overlay duration-300 lg:flex z-50 border-r border-t border-l border-divider_dark_2 hover:bg-black_soft"
         @click="toggle"
       >
         <ArrowLeftIcon class="h-5 w-5 text-text_dark_2 -rotate-90 transform" />
@@ -89,7 +89,7 @@
     </aside>
     <aside v-else class="navigation navigation--collapsed light:bg-gray_dark_1">
       <div
-        class="absolute left-[105px] top-24 hidden -translate-x-14 rotate-90 transform cursor-pointer flex-row items-center justify-center rounded-t-md bg-black_mute px-3 py-1 text-sm text-white shadow-overlay duration-300 lg:flex z-50 border-r border-t border-l border-divider_dark_2 hover:bg-black_soft"
+        class="absolute left-[105px] top-16 hidden -translate-x-14 rotate-90 transform cursor-pointer flex-row items-center justify-center rounded-t-md bg-black_mute px-3 py-1 text-sm text-white shadow-overlay duration-300 lg:flex z-50 border-r border-t border-l border-divider_dark_2 hover:bg-black_soft"
         @click="toggle"
       >
         <ArrowRightIcon class="h-5 w-5 text-text_dark_2 -rotate-90 transform" />
