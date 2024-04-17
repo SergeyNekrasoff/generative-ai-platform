@@ -1,3 +1,3 @@
-import TemplatesPage from './ui/Templates.vue'
+import UIKitPage from './ui/UIKitPage.vue'
 
-export default TemplatesPage
+export default UIKitPage

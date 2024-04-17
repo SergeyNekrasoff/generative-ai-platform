@@ -1,3 +1,3 @@
-import AccountPage from './ui/Account.vue'
+import AccountPage from './ui/AccountPage.vue'
 
 export default AccountPage

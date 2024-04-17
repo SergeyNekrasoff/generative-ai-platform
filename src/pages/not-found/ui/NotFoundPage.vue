@@ -3,11 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@unhead/vue'
+import { computed } from 'vue'
 
 const title = computed((): string => '404 - page not found')
-
-useHead({
-  title: title.value
-})
 </script>

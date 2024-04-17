@@ -196,7 +196,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Ref } from 'vue'
-import { useHead } from '@unhead/vue'
 
 import { FolderIcon } from '@heroicons/vue/24/solid'
 import { ChevronDownIcon } from '@heroicons/vue/24/solid'
@@ -212,10 +211,6 @@ import { BaseDropdown } from '@/shared/ui/dropdown'
 import { BaseDropdownItem } from '@/shared/ui/dropdown'
 import { BaseFormInput } from '@/shared/ui/form/base'
 import { BaseFormCheckbox } from '@/shared/ui/form/base'
-
-useHead({
-  title: 'Projects'
-})
 
 const inputValue: Ref<string> = ref('')
 const isDisabled: Ref<boolean> = ref(false)

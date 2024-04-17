@@ -1,3 +1,3 @@
-import HistoryPage from './ui/History.vue'
+import HistoryPage from './ui/HistoryPage.vue'
 
 export default HistoryPage

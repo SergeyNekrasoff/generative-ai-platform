@@ -27,7 +27,7 @@ import { computed } from 'vue'
 
 const emit = defineEmits(['update:modelValue', 'change'])
 
-interface IVRadio {
+interface IRadio {
   modelValue?: IRadioItem
   options: IRadioItem[]
   label?: string
@@ -36,14 +36,14 @@ interface IVRadio {
   error?: string
 }
 
-const props = defineProps<IVRadio>()
+const props = defineProps<IRadio>()
 
 const classes = computed(() => ({
   'disabled  events-none': props.isDisabled,
   error: props.error
 }))
 
-function onChange(item: IRadioItem) {
+function onChange(item: IRadio) {
   emit('update:modelValue', item)
 }
 </script>

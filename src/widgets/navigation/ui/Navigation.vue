@@ -43,7 +43,7 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <PencilSquareIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/chat" class="text-lg font-bold pt-1 w-full">Editor</router-link>
+            <router-link to="/editor" class="text-lg font-bold pt-1 w-full">Editor</router-link>
           </li>
           <li class="mb-4 mt-4">
             <hr class="text-divider_dark_2" />

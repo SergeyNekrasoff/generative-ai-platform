@@ -4,12 +4,7 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { useHead } from '@unhead/vue'
 import { useToast } from '@/shared/ui/toast/model/useToast'
-
-useHead({
-  title: 'textailor.io | history'
-})
 
 const { toast } = useToast()
 

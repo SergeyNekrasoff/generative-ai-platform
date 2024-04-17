@@ -78,7 +78,6 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@unhead/vue'
 import { BaseCarousel } from '@/shared/ui/carousel'
 import { BaseButton } from '@/shared/ui/buttons'
 import { RectangleStackIcon } from '@heroicons/vue/24/solid'
@@ -191,8 +190,4 @@ const projects = [
     date: 'Created 2 days ago'
   }
 ]
-
-useHead({
-  title: 'Home | Welcome!'
-})
 </script>

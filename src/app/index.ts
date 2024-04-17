@@ -1,9 +1,5 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import { createHead } from '@unhead/vue'
-
+import { router, store } from './providers'
 import App from './App.vue'
 
-import { router } from './providers'
-
-export const app = createApp(App).use(createPinia()).use(createHead()).use(router)
+export const app = createApp(App).use(router).use(store)

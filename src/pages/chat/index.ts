@@ -1,3 +1,3 @@
-import ChatPage from './ui/Chat.vue'
+import ChatPage from './ui/ChatPage.vue'
 
 export default ChatPage
