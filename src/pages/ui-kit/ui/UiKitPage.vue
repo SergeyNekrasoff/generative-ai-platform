@@ -1,20 +1,26 @@
 <template>
-  <div class="container">
-    <h1>UI</h1>
+  <div class="mx-auto w-[90%] flex flex-col justify-center px-6 py-8 duration-500">
+    <div class="flex w-full flex-1 flex-col max-w-screen-xl mx-auto">
+      <div class="flex items-center justify-between mb-20">
+        <div class="text-2xl">UI KIT</div>
+      </div>
 
-    <ColorStyles />
+      <div class="flex items-center justify-between mb-6">
+        <ColorStyles />
 
-    <InputStyles />
+        <InputStyles />
 
-    <CheckboxStyles />
+        <CheckboxStyles />
 
-    <RadioStyles />
+        <RadioStyles />
 
-    <ButtonStyles />
+        <ButtonStyles />
 
-    <LoaderStyles />
+        <LoaderStyles />
 
-    <PaginationStyles />
+        <PaginationStyles />
+      </div>
+    </div>
   </div>
 </template>
 

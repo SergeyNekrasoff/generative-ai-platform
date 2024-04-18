@@ -24,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+import './styles/index.scss'
+
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { Header } from '@/widgets/header'
@@ -62,6 +64,4 @@ const layout = computed(() => route.meta.layout || DefaultLayout)
   //  grid-area: footer;
   //}
 }
-
-@import './styles/index.scss';
 </style>

@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { useAttrs } from 'vue'
 
-interface IButtonBase {
+interface IButton {
   text?: string
   disabled?: boolean
 }
@@ -27,7 +27,7 @@ const emit = defineEmits(['click'])
 
 const attrs = useAttrs()
 
-const props = withDefaults(defineProps<IButtonBase>(), {
+const props = withDefaults(defineProps<IButton>(), {
   disabled: false
 })
 

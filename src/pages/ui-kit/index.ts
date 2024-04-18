@@ -1,2 +1,3 @@
-import UIKitPage from './ui/UIKitPage.vue'
-export default UIKitPage
+import UiKitPage from './ui/UiKitPage.vue'
+
+export default UiKitPage
