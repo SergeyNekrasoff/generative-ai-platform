@@ -1,4 +1,2 @@
-import { DefaultLayout } from './default-layout'
-import { HomeLayout } from './home-layout'
-
-export { DefaultLayout, HomeLayout }
+export { default as DefaultLayout } from '@/shared/ui/layouts/DefaultLayout.vue'
+export { default as EmptyLayout } from '@/shared/ui/layouts/EmptyLayout.vue'

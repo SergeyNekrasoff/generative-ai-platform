@@ -5,6 +5,14 @@ export default {
   darkMode: 'dark', // or 'media' or 'class'
   theme: {
     extend: {},
+    screens: {
+      xs: { min: '0', max: '428px' },
+      xss: { min: '0', max: '767px' },
+      s: { min: '768px', max: '1023px' },
+      m: '1024px',
+      lg: '1320px',
+      xl: '1840px'
+    },
     colors: {
       transparent: 'transparent',
       white: 'var(--vt-c-white)',

@@ -26,7 +26,7 @@
       </div>
 
       <!-- Popular Templates -->
-      <div class="mt-8 mb-16">
+      <!-- <div class="mt-8 mb-16">
         <div class="flex items-center justify-between mb-4">
           <div class="text-2xl">Get started with Templates</div>
           <BaseButton>
@@ -53,7 +53,7 @@
             </router-link>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Projects -->
       <div class="mt-8 mb-16">
@@ -106,12 +106,12 @@ const items = [
 ]
 
 const features = [
-  {
-    id: 1,
-    title: 'Explore Templates',
-    description: 'Explore our most popular and highly-rated templates.',
-    ctaText: 'Try this'
-  },
+  // {
+  //   id: 1,
+  //   title: 'Explore Templates',
+  //   description: 'Explore our most popular and highly-rated templates.',
+  //   ctaText: 'Try this'
+  // },
   {
     id: 2,
     title: 'Discover Chat',
@@ -123,7 +123,7 @@ const features = [
     id: 3,
     title: 'Use Editor',
     description: 'Create benefit-focused texts for your purposes.',
-    ctaText: 'Let`s type'
+    ctaText: 'Try this'
   }
 ]
 

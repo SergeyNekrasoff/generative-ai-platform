@@ -1,6 +1,6 @@
 <template>
   <Transition name="fade" mode="out-in">
-    <aside v-if="!collapsed" class="navigation light:bg-gray_dark_1">
+    <nav v-if="!collapsed" class="navigation light:bg-gray_dark_1">
       <!-- <div
         class="absolute left-[325px] top-16 hidden -translate-x-14 rotate-90 transform cursor-pointer flex-row items-center justify-center rounded-t-md bg-black_mute px-3 py-1 text-sm text-white shadow-overlay duration-300 lg:flex z-50 border-r border-t border-l border-divider_dark_2 hover:bg-black_soft"
         @click="toggle"
@@ -13,7 +13,7 @@
             class="flex items-center justify-start mt-8 w-full hover:bg-divider_dark_2 py-2 px-4 rounded-md"
           >
             <HomeIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/" class="text-lg font-bold pt-1 w-full">Home</router-link>
+            <router-link to="/" class="text-lg font-medium pt-1 w-full">Home</router-link>
           </li>
           <li class="mb-16 mt-4">
             <hr class="text-divider_dark_2" />
@@ -23,27 +23,29 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <DocumentTextIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/projects" class="text-lg font-bold pt-1 w-full">Projects</router-link>
+            <router-link to="/projects" class="text-lg font-medium pt-1 w-full"
+              >Projects</router-link
+            >
           </li>
-          <li
+          <!-- <li
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <RectangleStackIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/templates" class="text-lg font-bold pt-1 w-full"
+            <router-link to="/templates" class="text-lg font-medium pt-1 w-full"
               >Templates</router-link
             >
-          </li>
+          </li> -->
           <li
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <ChatBubbleBottomCenterTextIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/chat" class="text-lg font-bold pt-1 w-full">Chat</router-link>
+            <router-link to="/chat" class="text-lg font-medium pt-1 w-full">Chat</router-link>
           </li>
           <li
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <PencilSquareIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/editor" class="text-lg font-bold pt-1 w-full">Editor</router-link>
+            <router-link to="/editor" class="text-lg font-medium pt-1 w-full">Editor</router-link>
           </li>
           <li class="mb-4 mt-4">
             <hr class="text-divider_dark_2" />
@@ -52,7 +54,7 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <DocumentMagnifyingGlassIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/history" class="text-lg font-bold pt-1 w-full">History</router-link>
+            <router-link to="/history" class="text-lg font-medium pt-1 w-full">History</router-link>
           </li> -->
         </ul>
       </div>
@@ -86,7 +88,7 @@
           </li>
         </ul>
       </div>
-    </aside>
+    </nav>
     <!-- <aside v-else class="navigation navigation--collapsed light:bg-gray_dark_1">
       <div
         class="absolute left-[105px] top-16 hidden -translate-x-14 rotate-90 transform cursor-pointer flex-row items-center justify-center rounded-t-md bg-black_mute px-3 py-1 text-sm text-white shadow-overlay duration-300 lg:flex z-50 border-r border-t border-l border-divider_dark_2 hover:bg-black_soft"

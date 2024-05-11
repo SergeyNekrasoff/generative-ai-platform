@@ -1,0 +1,12 @@
+.chat {
+  @apply col-span-2 border-r border-divider_dark_2 p-4 min-w-96 max-w-[480px];
+  height: calc(100vh - 48px);
+
+  &__inner {
+    @apply flex flex-col items-center justify-between h-full;
+  }
+}
+
+.chat-editor {
+  @apply col-span-5 p-4 h-[calc(100vh-60px)];
+}

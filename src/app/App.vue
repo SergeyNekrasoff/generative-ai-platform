@@ -1,5 +1,11 @@
 <template>
-  <component :is="layout">
+  <EmptyLayout v-if="isEmptyLayout">
+    <template v-slot:header>
+      <Header />
+    </template>
+  </EmptyLayout>
+
+  <DefaultLayout v-else>
     <template v-slot:header>
       <Header />
     </template>
@@ -7,20 +13,10 @@
     <template v-slot:navigation>
       <Navigation />
     </template>
+  </DefaultLayout>
 
-    <template v-slot:default>
-      <router-view />
-    </template>
-
-    <!-- <template v-slot:footer>
-      <Footer />
-    </template> -->
-
-    <template v-slot:widgets>
-      <ContainerModal />
-      <BaseToast />
-    </template>
-  </component>
+  <ContainerModal />
+  <BaseToast />
 </template>
 
 <script setup lang="ts">
@@ -28,40 +24,13 @@ import './styles/index.scss'
 
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { DefaultLayout, EmptyLayout } from '@/shared/ui/layouts'
 import { Header } from '@/widgets/header'
 import { Navigation } from '@/widgets/navigation'
 // import { Footer } from '@/widgets/footer'
-import { DefaultLayout } from '@/shared/ui/layouts'
 import { ContainerModal } from '@/shared/ui/modal'
 import { BaseToast } from '@/shared/ui/toast'
 
 const route = useRoute()
-
-const layout = computed(() => route.meta.layout || DefaultLayout)
+const isEmptyLayout = computed(() => route.meta.layout === 'empty')
 </script>
-
-<style lang="scss">
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 6fr;
-  grid-template-areas:
-    'header header'
-    'navigation content';
-
-  header {
-    grid-area: header;
-  }
-
-  nav {
-    grid-area: navigation;
-  }
-
-  main {
-    grid-area: content;
-  }
-
-  //footer {
-  //  grid-area: footer;
-  //}
-}
-</style>

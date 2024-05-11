@@ -1,7 +1,9 @@
 <template>
   <header class="header border-b border-divider_dark_2">
     <div class="flex items-center justify-between h-8">
-      <Logo class="scale-[0.9]" />
+      <router-link to="/">
+        <Logo class="scale-[0.9]" />
+      </router-link>
       <div class="flex items-center justify-center w-1/3">
         <div
           class="flex justify-center min-w-[40%] text-center rounded-lg border border-divider_dark_2 py-1 text-base font-bold ml-4 text-gray_dark_1"
