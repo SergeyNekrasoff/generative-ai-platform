@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto w-[90%] flex flex-col justify-center px-6 py-8 duration-500">
+  <div class="mx-auto w-[90%] max-w-[1280px] flex flex-col justify-center px-6 py-8 duration-500">
     <div class="flex w-full flex-1 flex-col max-w-screen-xl mx-auto">
       <!-- Carousel -->
       <div class="mt-8 mb-16">
@@ -16,7 +16,7 @@
               class="flex flex-col items-start justify-end border bg-divider_light_2 border-black_mute rounded-lg h-full w-full p-4 hover:bg-gray_dark_4 hover:shadow-md hover:shadow-gray_dark_1 transition ease-in-out delay-20"
             >
               <div class="h-[40%] mb-2">
-                <div class="text-xl mb-2">{{ feature.title }}</div>
+                <div class="text-2xl font-[500] mb-2">{{ feature.title }}</div>
                 <div class="text-sm font-light text-gray_light_1">{{ feature.description }}</div>
               </div>
               <button type="button">{{ feature.ctaText }}</button>

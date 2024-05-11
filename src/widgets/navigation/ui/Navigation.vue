@@ -13,9 +13,9 @@
             class="flex items-center justify-start mt-8 w-full hover:bg-divider_dark_2 py-2 px-4 rounded-md"
           >
             <HomeIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/" class="text-lg font-medium pt-1 w-full">Home</router-link>
+            <router-link to="/" class="text-lg font-[500] pt-1 w-full">Home</router-link>
           </li>
-          <li class="mb-16 mt-4">
+          <li class="mb-20 mt-4">
             <hr class="text-divider_dark_2" />
           </li>
           <li class="text-xs py-2 text-text_dark_3">Workspace</li>
@@ -23,7 +23,7 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <DocumentTextIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/projects" class="text-lg font-medium pt-1 w-full"
+            <router-link to="/projects" class="text-lg font-[500] pt-1 w-full"
               >Projects</router-link
             >
           </li>
@@ -39,13 +39,13 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <ChatBubbleBottomCenterTextIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/chat" class="text-lg font-medium pt-1 w-full">Chat</router-link>
+            <router-link to="/chat" class="text-lg font-[500] pt-1 w-full">Chat</router-link>
           </li>
           <li
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <PencilSquareIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/editor" class="text-lg font-medium pt-1 w-full">Editor</router-link>
+            <router-link to="/editor" class="text-lg font-[500] pt-1 w-full">Editor</router-link>
           </li>
           <li class="mb-4 mt-4">
             <hr class="text-divider_dark_2" />
@@ -54,7 +54,7 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <DocumentMagnifyingGlassIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/history" class="text-lg font-medium pt-1 w-full">History</router-link>
+            <router-link to="/history" class="text-lg font-[500] pt-1 w-full">History</router-link>
           </li> -->
         </ul>
       </div>
@@ -80,7 +80,7 @@
           <li
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
-            <span class="flex items-center justify-center h-8 w-10 rounded-full bg-purple mr-3">
+            <span class="flex items-center justify-center h-8 w-12 rounded-full bg-purple mr-3">
               J
             </span>
             <router-link to="/account" class="pt-1 w-full">Judixel89</router-link>

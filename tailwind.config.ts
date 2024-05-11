@@ -85,7 +85,9 @@ export default {
       purple_light: 'var(--vt-c-purple-light)',
       purple_lighter: 'var(--vt-c-purple-lighter)',
       purple_dark: 'var(--vt-c-purple-dark)',
-      purple_darker: 'var(--vt-c-purple-darker)'
+      purple_darker: 'var(--vt-c-purple-darker)',
+
+      tt: '#bf492e'
     }
   },
   plugins: []

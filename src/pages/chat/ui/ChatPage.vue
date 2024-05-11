@@ -5,7 +5,7 @@
         <div class="flex flex-col items-center justify-center pt-48">
           <ChatBubbleLeftEllipsisIcon class="h-24 w-24 mb-4 text-text_dark_4" />
           <div class="text-4xl font-semibold mb-4">Welcome to Chat</div>
-          <div class="text-sm font-light text-gray_light_1 text-center w-2/3">
+          <div class="text-sm font-[400] text-gray_light_1 text-center w-2/3">
             Get started by writing a task and Chat can do the rest. Not sure where to start? Check
             out the Prompt Library for inspiration.
           </div>
@@ -29,6 +29,7 @@
     </div>
     <div class="chat-editor">
       <BaseEditor
+        class="w-full"
         :mode="ModeEditor.ADVANCED"
         :placeholder="'Start typing, copy or paste to get started...'"
         @send="save"

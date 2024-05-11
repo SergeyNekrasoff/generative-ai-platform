@@ -91,10 +91,7 @@
           :maxSize="CONFIG_IMAGE.fileSize"
           :accept="CONFIG_IMAGE.formats"
           @upload="uploadImage"
-          @open-modal="setCurrentModal"
         />
-        <!-- @image-uploaded="addUploadedImage"
-          @handle-error-image="removeImg" -->
 
         <feature-text-link
           v-if="currentModeEditor === ModeEditor.ADVANCED"
@@ -104,20 +101,34 @@
         />
       </div>
 
-      <div class="flex flex-col items-center justify-start">
+      <!-- <div class="flex flex-col items-center justify-start">
         <feature-prev @to-prev="handlePrevEvent" />
 
         <feature-next @to-next="handleNextEvent" />
-      </div>
+      </div> -->
     </div>
+
+    <!-- Submit -->
+    <!-- <template v-if="typeSubmit === TYPE_SUBMIT.BUTTON">
+      <button
+        type="button"
+        role="button"
+        class="absolute bottom-2 right-24 w-24 bg-tt flex items-center justify-center rounded-md px-4 py-1 text-white transition hover:bg-grandlight xss:px-2 z-50 cursor-pointer"
+        :class="getStringHTMLContent && getStringHTMLContent.length > 0 ? '' : ''"
+        :disabled="disableEditor"
+        @click="sendHTMLContent"
+      >
+        <span class="text-base font-[400] xss:hidden">Save</span>
+      </button>
+    </template> -->
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineAsyncComponent, ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import type { Ref } from 'vue'
-import { ModeEditor, CONFIG_IMAGE } from '@/entities/editor/model/types'
-import { useFocus, useWindowScroll, onClickOutside } from '@vueuse/core'
+import { ModeEditor, CONFIG_IMAGE, TYPE_SUBMIT } from '@/entities/editor/model/types'
+import { useFocus, onClickOutside } from '@vueuse/core'
 
 const FeatureH2 = defineAsyncComponent(
   () => import('@/entities/editor/ui/BaseEditor/features/FeatureH2.vue')
@@ -163,12 +174,14 @@ interface IProps {
   // userId: number
   mode?: string
   placeholder?: string
+  typeSubmit?: string
   disabled?: boolean
 }
 
 const props = withDefaults(defineProps<IProps>(), {
   mode: ModeEditor.BASE,
   placeholder: 'default',
+  typeSubmit: 'none',
   disabled: false
 })
 
@@ -185,9 +198,9 @@ const isFirstClick: Ref<boolean> = ref(false)
 const isFocusedEditor: Ref<boolean> = ref(false)
 const isCurrentModal: Ref<string> = ref('')
 const statusQuoteIsChanged: Ref<boolean> = ref(false)
-const visibleDropdown: Ref<boolean> = ref(false)
 const checkLastSiblingsBr: Ref<number> = ref(0)
 const isLastActiveLi: Ref<boolean> = ref(false)
+const disableEditor: Ref<boolean> = ref(false)
 
 const { focused } = useFocus(editable)
 
@@ -1314,8 +1327,24 @@ const handleNextEvent = () => {
   console.log(`next`)
 }
 
-const uploadImage = () => {
-  console.log(`upload-image`)
+const uploadImage = (value: File): void => {
+  editable.value?.focus()
+
+  // if (
+  //   value &&
+  //   (document.getSelection().anchorNode.parentNode.id === 'editable' ||
+  //     document.getSelection().anchorNode.id === 'editable')
+  // ) {
+  //   let { imagePath, wide } = value
+
+  //   let el = document.createElement('img')
+  //   el.src = imagePath
+
+  //   if (wide) el.setAttribute('wide', '')
+
+  //   insertNodeElement(el)
+  // }
+  console.log(`upload image`)
 }
 
 const setCurrentModal = (modal) => {
@@ -1326,10 +1355,21 @@ const close = () => {
   isFocusedEditor.value = false
 }
 
+const sendHTMLContent = () => {
+  emit('send', editable.value?.innerHTML)
+  close()
+  editable.value = null
+}
+
+const getStringHTMLContent = computed(() => {
+  return editable.value?.textContent
+})
+
 watch(focused, (focused) => {
   if (focused) {
     isFocusedEditor.value = true
     isFirstClick.value = true
+    disableEditor.value = true
   }
 })
 

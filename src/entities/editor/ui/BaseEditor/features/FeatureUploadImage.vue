@@ -3,30 +3,34 @@
     <transition name="slide-fade">
       <span v-if="isHovered" class="feature-tooltip">Image</span>
     </transition>
+    <input
+      type="file"
+      name="fileUpload"
+      id="fileUpload"
+      @change="handleFileImage($event)"
+      class="hidden"
+    />
     <button
       id="nodeImage"
       type="button"
       role="button"
       ref="nodeImage"
       class="w-[36px] h-[36px] text-text_dark_2 flex items-center justify-center rounded-lg p-1 transition hover:bg-divider_dark_2"
-      :class="getCurrentModal ? 'bg-gray_dark_2' : ''"
-      @click="toggle"
+      @click="chooseFiles"
     >
-      <PhotoIcon
-        class="h-5 w-5 text-text_dark_2"
-        :class="getCurrentModal ? 'text-gray_light_3' : ''"
-      />
+      <PhotoIcon class="h-5 w-5 text-text_dark_2" />
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, computed, watch } from 'vue'
+import { defineProps, defineEmits, ref, computed, watch, onMounted } from 'vue'
 import type { Ref } from 'vue'
+// import { useUploadImage } from '@composable/useUploadImages.js'
 import { useElementHover } from '@vueuse/core'
 import { PhotoIcon } from '@heroicons/vue/24/solid'
 
-const emits = defineEmits(['open-modal', 'upload'])
+const emit = defineEmits(['open-modal', 'upload'])
 
 interface IProps {
   maxSize: number
@@ -40,28 +44,91 @@ const props = withDefaults(defineProps<IProps>(), {
   currentModal: 'image/*'
 })
 
-const visibleImage: Ref<boolean> = ref(false)
+const maxSize: Ref<number> = ref(props.maxSize)
+const accept: Ref<string> = ref(props.accept)
 const nodeImage: Ref<HTMLDivElement | null> = ref(null)
+const fileImage: Ref<File | null> = ref(null)
+const errors: Ref<string[]> = ref([])
+
 const isHovered = useElementHover(nodeImage)
 
-const toggle = () => {
-  visibleImage.value = !visibleImage.value
+const handleFileImage = async (event: Event) => {
+  const fileInput = event.target as HTMLInputElement
+  const files: FileList | null = fileInput.files
 
-  emits('upload')
-}
+  clearErrors()
 
-const getCurrentModal = computed(() => {
-  return props.currentModal && props.currentModal === 'image'
-})
+  if (files && files[0]) {
+    if (isFileValid(files[0])) {
+      try {
+        // const image = await useUploadImage(files[0])
+        // fileImage.value = image
 
-watch(
-  () => visibleImage.value,
-  (value) => {
-    if (value) {
-      emits('open-modal', 'upload')
+        sendFileUrl()
+      } catch (error) {
+        throw Error(`Invalid type file ${error.message}`)
+      }
     } else {
-      emits('open-modal', '')
+      console.log(`Invalid type file`)
     }
   }
-)
+}
+
+const isFileSizeValid = (fileSize: number): void => {
+  if (fileSize >= maxSize.value) {
+    errors.value.push('File size should be less than 5 MB')
+  }
+}
+
+const isFileTypeValid = (fileExtension: string | undefined): void => {
+  if (
+    typeof fileExtension !== 'undefined' &&
+    !accept.value.split(',').join(',').includes(fileExtension)
+  ) {
+    errors.value.push('The image must be a file of type: png, jpg, jpeg, webp')
+  }
+}
+
+const isFileValid = (file: File): boolean => {
+  const fileExtension = file.name.split('.').pop()
+
+  isFileSizeValid(Math.round((file.size / 1024 / 1024) * 100) / 100)
+  isFileTypeValid(fileExtension)
+
+  if (errors.value.length === 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
+const clearErrors = (): void => {
+  errors.value = []
+}
+
+const close = (): void => {
+  fileImage.value = null
+  clearErrors()
+}
+
+const sendFileUrl = (): void => {
+  if (fileImage.value) {
+    emit('upload', fileImage.value)
+    close()
+  }
+}
+
+const chooseFiles = (): void => {
+  document.querySelector('#fileUpload').value = ''
+  document.querySelector('#fileUpload').click()
+  clearErrors()
+}
+
+onMounted(() => {
+  document.addEventListener('click', () => {
+    if (fileImage.value) {
+      close()
+    }
+  })
+})
 </script>

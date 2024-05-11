@@ -1,6 +1,6 @@
 .layout {
   &--default {
-    @apply grid grid-cols-[280px_minmax(900px,_1fr)];
+    @apply grid grid-cols-[250px_minmax(900px,_1fr)];
 
     header {
       @apply col-span-3;
