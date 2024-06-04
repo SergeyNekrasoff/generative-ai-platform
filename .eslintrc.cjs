@@ -11,5 +11,8 @@ module.exports = {
   ignorePatterns: ['*.config.js'],
   parserOptions: {
     ecmaVersion: 'latest'
+  },
+  env: {
+    'vue/setup-compiler-macros': true
   }
 }

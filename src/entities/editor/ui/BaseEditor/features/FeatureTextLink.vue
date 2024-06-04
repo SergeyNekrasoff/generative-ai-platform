@@ -1,7 +1,7 @@
 <template>
   <div class="relative xss:hidden">
     <transition name="slide-fade">
-      <span v-if="isHovered" class="feature-tooltip">Link</span>
+      <span v-if="isHovered" class="feature-tooltip">Add Link</span>
     </transition>
     <button
       id="nodeLink"
@@ -17,16 +17,25 @@
         :class="getCurrentModal ? 'text-gray_light_3' : ''"
       />
     </button>
+
+    <!-- Modal -->
+    <div
+      v-if="visibleLink && getCurrentModal"
+      class="absolute w-[320px] xss:-left-2 s:left-0 m:-left-10 flex flex-col items-start justify-start rounded-lg border-[1px] border-shade bg-white pb-4 shadow-md z-50 p-4"
+    >
+      dfsdfd sdf fdsf sdf
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, computed, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
 import type { Ref } from 'vue'
+import { isValidURL } from '@/shared/lib/utils/validUrl'
 import { useElementHover } from '@vueuse/core'
 import { LinkIcon } from '@heroicons/vue/24/solid'
 
-const emits = defineEmits(['open-modal', 'add-link'])
+const emits = defineEmits(['open-modal', 'add-text-link'])
 
 interface IProps {
   currentModal: string
@@ -37,24 +46,72 @@ const props = defineProps<IProps>()
 const visibleLink: Ref<boolean> = ref(false)
 const nodeLink: Ref<HTMLDivElement | null> = ref(null)
 const isHovered = useElementHover(nodeLink)
+const urlPath: Ref<string> = ref('')
+const urlText: Ref<string> = ref('')
+
+const errorMessage: Ref<string> = ref('')
+const isValidTextLink: Ref<boolean> = ref(false)
 
 const toggle = () => {
   visibleLink.value = !visibleLink.value
+  emits('open-modal', 'text-link')
+  getSelectionText()
+}
 
-  emits('add-link')
+const close = () => {
+  visibleLink.value = false
+  removeUrl()
+  removeText()
+}
+
+const removeUrl = () => {
+  urlPath.value = ''
+}
+
+const removeText = () => {
+  urlText.value = ''
+}
+
+const sendTextLink = () => {
+  emits('add-text-link', { href: urlPath.value, text: urlText.value })
+  urlPath.value = ''
+  urlText.value = ''
+  visibleLink.value = false
+}
+
+const getSelectionText = () => {
+  let selection: any
+  selection = window.getSelection()
+  const anchorNode = selection.anchorNode.parentNode.tagName
+  const path = selection.anchorNode.parentNode
+
+  if (selection !== null) {
+    urlText.value = selection.getRangeAt(0)
+  }
+
+  if (anchorNode === 'A') {
+    urlPath.value = path
+    urlText.value = selection.anchorNode.parentNode.textContent
+  }
 }
 
 const getCurrentModal = computed(() => {
-  return props.currentModal && props.currentModal === 'image'
+  return props.currentModal && props.currentModal === 'text-link'
+})
+
+const hasError = computed(() => {
+  return !urlPath.value || !isValidURL(urlPath.value)
 })
 
 watch(
-  () => visibleLink.value,
+  () => urlPath.value,
   (value) => {
-    if (value) {
-      emits('open-modal', 'add-link')
+    if (value && !isValidURL(value)) {
+      errorMessage.value = 'This field should contain link like a https://...'
+      isValidTextLink.value = false
     } else {
-      emits('open-modal', '')
+      errorMessage.value = ''
+      isValidTextLink.value = true
     }
   }
 )

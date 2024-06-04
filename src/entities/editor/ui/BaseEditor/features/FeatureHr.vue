@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, computed, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
 import type { Ref } from 'vue'
 import { useElementHover } from '@vueuse/core'
 import { MinusIcon } from '@heroicons/vue/24/solid'

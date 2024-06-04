@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, ref, watch, computed } from 'vue'
+import { ref, watch, computed } from 'vue'
 import { useElementHover } from '@vueuse/core'
 import type { Ref } from 'vue'
 

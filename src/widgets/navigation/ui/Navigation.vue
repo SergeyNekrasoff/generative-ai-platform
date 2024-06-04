@@ -23,15 +23,13 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <DocumentTextIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/projects" class="text-lg font-[500] pt-1 w-full"
-              >Projects</router-link
-            >
+            <router-link to="/projects" class="text-lg font-[500] w-full">Projects</router-link>
           </li>
           <!-- <li
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <RectangleStackIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/templates" class="text-lg font-medium pt-1 w-full"
+            <router-link to="/templates" class="text-lg font-medium w-full"
               >Templates</router-link
             >
           </li> -->
@@ -39,13 +37,13 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <ChatBubbleBottomCenterTextIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/chat" class="text-lg font-[500] pt-1 w-full">Chat</router-link>
+            <router-link to="/chat" class="text-lg font-[500] w-full">Chat</router-link>
           </li>
           <li
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <PencilSquareIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/editor" class="text-lg font-[500] pt-1 w-full">Editor</router-link>
+            <router-link to="/editor" class="text-lg font-[500] w-full">Editor</router-link>
           </li>
           <li class="mb-4 mt-4">
             <hr class="text-divider_dark_2" />
@@ -54,7 +52,7 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <DocumentMagnifyingGlassIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/history" class="text-lg font-[500] pt-1 w-full">History</router-link>
+            <router-link to="/history" class="text-lg font-[500] w-full">History</router-link>
           </li> -->
         </ul>
       </div>
@@ -69,13 +67,13 @@
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
           >
             <Cog8ToothIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/settings" class="pt-1 w-full">Settings</router-link>
+            <router-link to="/settings" class="w-full">Settings</router-link>
           </li>
           <li
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md mb-10"
           >
             <PlusIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <button type="button" class="pt-1" @click="openModal">Invite members</button>
+            <button type="button" @click="openModal">Invite members</button>
           </li>
           <li
             class="flex items-center justify-start w-full hover:bg-divider_dark_2 py-2 px-2 rounded-md"
@@ -83,7 +81,7 @@
             <span class="flex items-center justify-center h-8 w-12 rounded-full bg-purple mr-3">
               J
             </span>
-            <router-link to="/account" class="pt-1 w-full">Judixel89</router-link>
+            <router-link to="/account" class="w-full">Judixel89</router-link>
             <ChevronRightIcon class="h-5 w-5" />
           </li>
         </ul>

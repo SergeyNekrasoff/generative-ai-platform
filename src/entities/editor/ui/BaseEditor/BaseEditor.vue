@@ -96,7 +96,7 @@
         <feature-text-link
           v-if="currentModeEditor === ModeEditor.ADVANCED"
           :current-modal="isCurrentModal"
-          @add-link="handleTextLinkSelection"
+          @add-text-link="handleTextLinkSelection"
           @open-modal="setCurrentModal"
         />
       </div>

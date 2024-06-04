@@ -19,7 +19,8 @@ div[contenteditable='true']::before {
 
 .app-editor,
 .contenteditable {
-  font-family: Assistant, sans-serif;
+  font-family: 'Montserrat', 'sans-serif';
+  font-weight: 200;
 }
 
 .app-editor a,
@@ -27,6 +28,11 @@ div[contenteditable='true']::before {
   cursor: pointer;
   color: theme('colors.blue_lighter');
   margin-bottom: 4px;
+}
+
+.app-editor strong,
+.contenteditable strong {
+  font-weight: 700;
 }
 
 .app-editor i,
