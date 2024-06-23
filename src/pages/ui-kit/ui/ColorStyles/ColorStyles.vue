@@ -7,11 +7,11 @@
         v-for="(color, i) of colors"
         :key="i"
         class="ui-color-styles__item center"
-        :class="'bg-' + color.bg"
+        :class="'text-' + color.text"
       >
-        <h3 :class="color.text">
+        <div class="p-2" :class="`bg-${color.bg}`">
           {{ color.bg }}
-        </h3>
+        </div>
       </li>
     </ul>
   </section>

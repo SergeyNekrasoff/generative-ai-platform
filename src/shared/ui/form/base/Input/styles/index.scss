@@ -1,14 +1,14 @@
-@import 'mixins';
+@import './mixins.scss';
 
 .base-input {
-  @apply relative flex flex-col items-start justify-center w-full h-[38px];
+  @apply relative flex flex-col items-start justify-center w-full;
 
   &__wrap {
-    @apply flex items-center justify-between w-full py-2 px-3 rounded-md border border-gray_dark_1 text-white_mute bg-gray_dark_4 transition duration-100 ease-in-out;
+    @apply flex items-center justify-between w-full bg-gray_dark_4 rounded-md transition duration-100 ease-in-out;
   }
 
   &__label {
-    @apply relative max-w-max;
+    @apply relative text-xs max-w-max pb-1;
 
     &.required::after {
       content: '*';
@@ -17,15 +17,17 @@
   }
 
   &__field {
-    @apply w-full text-text_dark_1 font-light;
+    @apply w-full text-text_dark_1 font-light py-2 px-3 rounded-md border border-solid border-divider_dark_2 overflow-hidden;
 
     &::placeholder {
       @apply text-text_light_4 text-sm font-light;
     }
 
-    &:focus-visible {
+    &:focus-visible,
+    &:focus {
       @include inputFocus;
     }
+
     &:hover {
       @include inputHover;
     }
@@ -35,34 +37,44 @@
     }
   }
 
-  &__error {
-    @apply absolute top-full text-red_dark mt-1;
-  }
-
   &.error {
-    .base-input__wrap {
-      @apply border-red_dark;
+    .base-input__field {
+      @apply border-tt;
     }
 
     .base-input__label {
-      color: var(--color__red);
+      @apply text-gray;
     }
 
     .base-input__field {
       &::placeholder {
-        @apply text-red_light;
+        @apply text-gray;
       }
+    }
+
+    .base-input__error {
+      @apply absolute top-full text-tt;
     }
   }
 
   &.disabled {
     .base-input__wrap {
-      @apply text-white_mute;
+      @apply border-divider_dark_2;
+    }
+
+    .base-input__label {
+      @apply text-gray_dark_2;
+    }
+
+    .base-input__field {
+      &::placeholder {
+        @apply text-gray_dark_2;
+      }
     }
   }
 }
 
-.base-input {
+.base-input__field {
   &.focus {
     .base-input__field {
       @include inputFocus;

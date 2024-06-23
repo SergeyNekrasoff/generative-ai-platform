@@ -1,19 +1,30 @@
 <template>
   <section>
-    <h2 class="mb-s">Input</h2>
+    <h2 class="mb-8">Inputs</h2>
 
     <div class="column gap-s max-w-field">
-      <BaseFormInput label="LABEL" name="input" placeholder="placeholder" />
-
       <BaseFormInput
-        v-for="(item, i) of inputList"
-        :key="i"
-        class="events-none"
-        :class="item"
-        :label="item.toUpperCase()"
-        :name="'input-' + (i + 1)"
-        :placeholder="item"
-        :is-disabled="item === 'disabled'"
+        label="Firstname"
+        class="mb-8"
+        name="input"
+        :error="'Something went wrong'"
+        placeholder="Something text.."
+      />
+      <BaseFormInput
+        label="Lastname"
+        class="disabled mb-8"
+        name="input"
+        :is-disabled="true"
+        placeholder="Something text.."
+      />
+      <BaseFormInput label="Password" class="mb-8" name="input" placeholder="Something text.." />
+      <BaseFormInput label="City" class="mb-8" name="input" placeholder="Something text.." />
+      <BaseFormInput
+        label="Price"
+        class="mb-8"
+        name="input"
+        placeholder="Something text.."
+        :is-disabled="true"
       />
     </div>
   </section>
@@ -21,6 +32,4 @@
 
 <script setup lang="ts">
 import { BaseFormInput } from '@/shared/ui/form'
-
-const inputList = ['hover', 'focus', 'error', 'disabled']
 </script>

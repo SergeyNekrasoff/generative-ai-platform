@@ -21,6 +21,8 @@
         @input="onInput"
         @blur="onBlur"
         @change="onChange"
+        maxlength="255"
+        minlength="15"
       />
 
       <div v-if="$slots.postfix" class="base-input__postfix">
@@ -64,22 +66,22 @@ const classes = computed(() => ({
 
 const { value: inputValue, setValue } = useRefValue(props.modelValue)
 
-function onInput(event: Event) {
+const onInput = (event: Event) => {
   const value = getValue(event)
   setValue(value)
 
   emit('update:modelValue', value)
 }
 
-function onBlur() {
+const onBlur = () => {
   emit('blur', inputValue.value)
 }
 
-function onChange() {
+const onChange = () => {
   emit('change', inputValue.value)
 }
 
-function getValue(event: Event) {
+const getValue = (event: Event) => {
   const target = event.target as HTMLInputElement
   return target.value.trim()
 }
