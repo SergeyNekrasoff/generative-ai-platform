@@ -1,7 +1,7 @@
 @mixin inputFocus() {
-  @apply border-blue;
+  @apply border-solid border-divider_light_2;
 }
 
 @mixin inputHover() {
-  @apply border-red;
+  @apply border-solid border-divider_dark_1;
 }

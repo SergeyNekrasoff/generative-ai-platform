@@ -1,10 +1,10 @@
 @import 'mixins';
 
 .base-checkbox {
-  @apply relative cursor-pointer z-50;
+  @apply relative flex items-center justify-start cursor-pointer h-9 z-50;
 
   &__label {
-    @apply text-white_mute;
+    @apply text-white_mute ml-2;
   }
 
   &__icon-wrap {
@@ -12,15 +12,11 @@
   }
 
   &__icon-bg {
-    @apply text-blue;
-
-    path {
-      fill: var(--vt-c-blue-dark);
-    }
+    @apply text-white_mute;
   }
 
   &__icon-checked {
-    @apply text-white_mute opacity-0 invisible transition-all duration-75 ease-in-out;
+    @apply text-white_mute transition-all duration-75 ease-in-out;
   }
 
   &:hover {
@@ -39,48 +35,36 @@
     }
   }
 
-  &:active {
-    @include checkboxActive();
-  }
-
   &.error {
     .base-checkbox__label {
-      color: var(--color__red);
+      @apply text-gray;
     }
 
     .base-checkbox__icon-bg {
-      color: var(--color__red);
-
-      path {
-        fill: var(--bg-color__error);
-      }
+      @apply text-gray;
     }
 
     .base-checkbox__icon-checked {
-      color: var(--color__red);
+      @apply text-gray;
+    }
+
+    .base-checkbox__error {
+      @apply absolute top-full mt-1 text-tt;
     }
   }
 
   &.disabled {
     .base-checkbox__label {
-      color: var(--vt-c-gray);
+      @apply text-gray_dark_1;
     }
 
     .base-checkbox__icon-bg {
-      color: var(--vt-c-gray);
-      opacity: 0.7;
-      path {
-        fill: var(--vt-c-blue-dark);
-      }
+      @apply text-gray_dark_1;
     }
 
     .base-checkbox__icon-checked {
-      color: var(--vt-c-gray);
+      @apply text-gray_dark_1;
     }
-  }
-
-  &__error {
-    @apply absolute top-full mt-1;
   }
 }
 
@@ -95,9 +79,5 @@
 
   &.checked {
     @include checkboxChecked;
-  }
-
-  &.active {
-    @include checkboxActive();
   }
 }

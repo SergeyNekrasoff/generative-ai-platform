@@ -1,6 +1,6 @@
 <template>
   <section class="column gap-s">
-    <h2>Radio</h2>
+    <h2 class="mb-8">Radio</h2>
 
     <BaseRadioInput v-model="value" label="RADIO LABEL" name="radio" :options="options" />
   </section>

@@ -1,37 +1,17 @@
 @mixin checkboxHover() {
   .base-checkbox__icon-bg {
-    path {
-      fill: var(--vt-c-blue-light);
-    }
+    @apply text-gray_light_1;
   }
 }
 
 @mixin checkboxFocus {
   .base-checkbox__icon-bg {
-    color: var(--vt-c-white);
+    @apply text-gray_light_1;
   }
 }
 
-@mixin checkboxChecked() {
+@mixin checkboxChecked {
   .base-checkbox__icon-checked {
-    @apply opacity-100 visible;
-  }
-}
-
-@mixin checkboxActive {
-  .base-checkbox__icon-wrap {
-    animation: 0.3s rotateCheckboxIcon linear infinite;
-  }
-}
-
-@keyframes rotateCheckboxIcon {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(4deg);
-  }
-  100% {
-    transform: rotate(0);
+    @apply text-gray_dark_5;
   }
 }

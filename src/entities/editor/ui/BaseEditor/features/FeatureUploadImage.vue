@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import type { Ref } from 'vue'
 // import { useUploadImage } from '@composable/useUploadImages.js'
 import { useElementHover } from '@vueuse/core'

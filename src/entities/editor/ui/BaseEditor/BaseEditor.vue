@@ -96,7 +96,7 @@
         <feature-text-link
           v-if="currentModeEditor === ModeEditor.ADVANCED"
           :current-modal="isCurrentModal"
-          @add-link="handleTextLinkSelection"
+          @add-text-link="handleTextLinkSelection"
           @open-modal="setCurrentModal"
         />
       </div>
@@ -1030,8 +1030,36 @@ const handleTextThroughSelection = (): void => {
   }
 }
 
-const handleTextLinkSelection = () => {
-  console.log(`text-link`)
+const handleTextLinkSelection = (value): void => {
+  const a = document.createElement('a')
+  a.href = value.href
+  a.innerHTML = value.text
+  a.target = '_blank'
+  a.rel = 'nofollow noindex'
+
+  let selection: any
+  selection = window.getSelection()
+  const range = selection.getRangeAt(0)
+  const parentNode = selection.anchorNode.parentNode
+
+  editable.value?.focus()
+
+  if (
+    parentNode.tagName === 'BLOCKQUOTE' ||
+    parentNode.tagName === 'STRONG' ||
+    parentNode.tagName === 'H2' ||
+    parentNode.tagName === 'H3' ||
+    parentNode.tagName === 'H4' ||
+    parentNode.tagName === 'I' ||
+    !isFocusedEditor.value
+  ) {
+    return
+  }
+
+  selection.removeAllRanges()
+  selection.addRange(savedRange.value)
+
+  insertNodeElement(a)
 }
 
 const handleList = (): void => {

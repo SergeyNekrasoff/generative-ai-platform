@@ -1,21 +1,21 @@
 <template>
   <label class="base-checkbox" :class="classes">
     <input
-      type="base-checkbox"
+      v-model="model"
+      type="checkbox"
       class="base-checkbox__input"
       :name="name"
-      :checked="modelValue"
       :disabled="isDisabled"
-      @change.prevent="onChange"
+      :value="value"
     />
 
     <span class="base-checkbox__icon-wrap">
-      <IconBg class="base-checkbox__icon-bg abs-center" />
-      <IconChecked class="base-checkbox__icon-checked abs-center" />
+      <IconBg v-if="modelValue" class="base-checkbox__icon-bg" />
+      <IconChecked v-else class="base-checkbox__icon-checked" />
     </span>
 
-    <span v-if="label" class="base-checkbox__label">
-      {{ label }}
+    <span v-if="$slots.default" class="base-checkbox__label">
+      <slot></slot>
     </span>
 
     <small v-if="error" class="base-checkbox__error">{{ error }}</small>
@@ -30,25 +30,31 @@ import { computed } from 'vue'
 const emit = defineEmits(['update:modelValue'])
 
 interface IBaseCheckbox {
-  modelValue?: boolean
-  label?: string
+  value?: string | number
+  modelValue: boolean | string[] | number[] | undefined
   name?: string
   isDisabled?: boolean
   error?: string
 }
 
 const props = withDefaults(defineProps<IBaseCheckbox>(), {
-  modelValue: false
+  value: undefined
+})
+
+const model = computed({
+  get(): IBaseCheckbox['modelValue'] {
+    return props.modelValue
+  },
+
+  set(value: IBaseCheckbox['modelValue']) {
+    emit('update:modelValue', value)
+  }
 })
 
 const classes = computed(() => ({
   'disabled events-none': props.isDisabled,
   error: props.error
 }))
-
-function onChange() {
-  emit('update:modelValue', !props.modelValue)
-}
 </script>
 
 <style lang="scss">
