@@ -1,8 +1,8 @@
 <template>
-  <section>
+  <section class="pr-6">
     <h2 class="mb-8">Checkbox</h2>
 
-    <div class="column gap-s">
+    <div class="column gap-s max-w-field">
       <BaseFormCheckbox v-model="checkboxBase1" class="mb-4" name="checkbox">
         Label 1 {{ checkboxBase1 }}
       </BaseFormCheckbox>

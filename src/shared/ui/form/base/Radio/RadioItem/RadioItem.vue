@@ -9,18 +9,25 @@
       :disabled="isDisabled"
       @change="onChange"
     />
-    <span class="radio-item__icon" />
+
+    <span class="radio-item__icon-wrap">
+      <IconBg v-if="!isChecked" class="radio-item__icon-bg" />
+      <IconChecked v-else class="radio-item__icon-checked" />
+    </span>
+
     <span class="radio-item__label">{{ label }}</span>
   </label>
 </template>
 
 <script setup lang="ts">
 import type { IRadioItem } from '../types'
+import IconBg from './icons/IconBg.vue'
+import IconChecked from './icons/IconChecked.vue'
 import { computed } from 'vue'
 
 const emit = defineEmits(['change'])
 
-interface IVRadioItem {
+interface IRadio {
   item: IRadioItem
   name?: string
   isDisabled?: boolean
@@ -28,16 +35,16 @@ interface IVRadioItem {
   isChecked: boolean
 }
 
-const props = defineProps<IVRadioItem>()
+const props = defineProps<IRadio>()
 
 const classes = computed(() => ({
-  disabled: props.isDisabled,
+  'disabled events-none': props.isDisabled,
   error: props.isError
 }))
 
 const label = computed(() => props.item.label || props.item.value)
 
-function onChange() {
+const onChange = () => {
   emit('change', props.item)
 }
 </script>

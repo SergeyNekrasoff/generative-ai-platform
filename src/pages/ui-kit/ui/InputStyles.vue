@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="pr-6">
     <h2 class="mb-8">Inputs</h2>
 
     <div class="column gap-s max-w-field">
