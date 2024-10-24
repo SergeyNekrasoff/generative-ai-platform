@@ -3,7 +3,11 @@
     v-bind="attrs"
     type="button"
     class="button-base"
-    :class="[disabled && `button-base__disabled`]"
+    :class="[
+      { 'button-base__disabled': disabled },
+      { 'button-base__primary': primary },
+      { 'button-base__solid': solid }
+    ]"
     :disabled="disabled"
     @click.stop.prevent="click"
   >
@@ -19,7 +23,8 @@
 import { useAttrs } from 'vue'
 
 interface IButton {
-  text?: string
+  primary?: boolean
+  solid?: boolean
   disabled?: boolean
 }
 

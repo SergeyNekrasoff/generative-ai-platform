@@ -13,7 +13,7 @@
             class="flex items-center justify-start mt-8 w-full hover:bg-divider_dark_2 py-2 px-4 rounded-md"
           >
             <HomeIcon class="h-5 w-5 mr-2 text-text_dark_2" />
-            <router-link to="/" class="text-lg font-[500] pt-1 w-full">Home</router-link>
+            <router-link to="/" class="text-lg font-[500] pt-1 w-full">Dashboard</router-link>
           </li>
           <li class="mb-20 mt-4">
             <hr class="text-divider_dark_2" />
@@ -181,14 +181,16 @@ import { ArrowRightIcon } from '@heroicons/vue/24/solid'
 
 import { useModal } from '@/shared/ui/modal/model/useModal'
 
-const InviteModal = defineAsyncComponent(() => import('@/shared/ui/modal/invite/InviteModal.vue'))
+const DefaultModal = defineAsyncComponent(
+  () => import('@/shared/ui/modal/default/DefaultModal.vue')
+)
 
 const modal = useModal()
 
 const collapsed: Ref<boolean> = ref(false)
 
 const openModal = async () => {
-  modal.show({ component: InviteModal })
+  modal.show({ component: DefaultModal })
 }
 
 // const toggle = () => (collapsed.value = !collapsed.value)

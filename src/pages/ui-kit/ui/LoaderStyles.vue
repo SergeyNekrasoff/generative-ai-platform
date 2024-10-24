@@ -1,8 +1,8 @@
 <template>
-  <section>
-    <h2 class="mb-s">Loaders</h2>
+  <section class="pr-6">
+    <h2 class="mb-8">Loaders</h2>
 
-    <div class="column pd-m gap-l">
+    <div class="column gap-s max-w-field">
       <BarsLoader />
 
       <div class="row gap-s">

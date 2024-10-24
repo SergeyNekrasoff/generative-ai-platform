@@ -1,8 +1,28 @@
 .button-base {
-  @apply text-sm flex items-center justify-between rounded-md p-2 border-solid;
+  @apply text-sm flex items-center justify-start rounded-md py-2 px-4 border-solid;
+
+  &:hover {
+    @apply bg-black_soft;
+  }
+
+  &__primary {
+    @apply bg-black_mute;
+
+    &:hover {
+      @apply bg-black_soft;
+    }
+  }
+
+  &__solid {
+    @apply border border-gray_dark_2;
+
+    &:hover {
+      @apply bg-black_mute;
+    }
+  }
 
   &__disabled {
-    @apply cursor-not-allowed bg-gray_light_1;
+    @apply cursor-not-allowed bg-divider_light_2 text-divider_dark_1;
 
     &:hover,
     &:active,

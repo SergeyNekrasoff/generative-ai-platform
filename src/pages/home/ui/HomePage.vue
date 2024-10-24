@@ -12,7 +12,7 @@
         <div class="flex items-start justify-start w-full gap-4">
           <div v-for="feature in features" :key="feature.id" class="w-[33%] h-64">
             <router-link
-              to="/"
+              :to="feature.urlPath"
               class="flex flex-col items-start justify-end border bg-divider_light_2 border-black_mute rounded-lg h-full w-full p-4 hover:bg-gray_dark_4 hover:shadow-md hover:shadow-gray_dark_1 transition ease-in-out delay-20"
             >
               <div class="h-[40%] mb-2">
@@ -106,24 +106,27 @@ const items = [
 ]
 
 const features = [
-  // {
-  //   id: 1,
-  //   title: 'Explore Templates',
-  //   description: 'Explore our most popular and highly-rated templates.',
-  //   ctaText: 'Try this'
-  // },
+  {
+    id: 1,
+    title: 'Explore Templates',
+    description: 'Explore our most popular and highly-rated templates.',
+    ctaText: 'Try this',
+    urlPath: '/templates'
+  },
   {
     id: 2,
     title: 'Discover Chat',
     description:
       'Chat serves as an AI assistant helping with everyday tasks like writing, brainstorming, researching, and more.',
-    ctaText: 'New chat'
+    ctaText: 'New chat',
+    urlPath: '/chat'
   },
   {
     id: 3,
     title: 'Use Editor',
     description: 'Create benefit-focused texts for your purposes.',
-    ctaText: 'Try this'
+    ctaText: 'Try this',
+    urlPath: '/editor'
   }
 ]
 

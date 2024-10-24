@@ -1,20 +1,23 @@
 .radio {
-  position: relative;
+  @apply relative;
+
+  &__list {
+    @apply flex flex-col items-start justify-center;
+  }
 
   &__error {
-    position: absolute;
-    bottom: -20px;
+    @apply absolute -bottom-[20px];
   }
 
   &.error {
     .radio__label {
-      color: var(--color__red);
+      @apply text-tt;
     }
   }
 
   &.disabled {
     .radio__label {
-      color: var(--color__grey);
+      @apply text-gray;
     }
   }
 }

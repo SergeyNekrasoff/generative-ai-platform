@@ -6,10 +6,18 @@
   &::-webkit-scrollbar {
     display: none;
   }
+
+  ::selection {
+    background: var(--vt-c-text-dark-3);
+  }
 }
 
 .app-editor {
   @apply h-full w-[90%] relative rounded-md whitespace-pre-wrap resize-none text-white_soft hover:outline-none focus:outline-none focus-visible:outline-none active:outline-none p-3 xss:text-sm s:text-base m:text-base transition z-50;
+
+  & > * {
+    color: var(--vt-c-white-soft);
+  }
 }
 
 div[contenteditable='true']::before {
@@ -91,6 +99,7 @@ div[contenteditable='true']::before {
 .app-editor ul,
 .contenteditable ul {
   @apply ml-2;
+  font-weight: 300;
 }
 
 .app-editor hr,
@@ -116,7 +125,7 @@ div[contenteditable='true']::before {
 }
 
 .app-editor-features {
-  @apply w-20 absolute top-[160px] right-2 m-2 bg-transparent p-2 rounded-md flex flex-col items-center justify-start;
+  @apply w-20 fixed top-0 right-[5.5rem] m-2 bg-transparent p-2 rounded-md flex flex-col items-center justify-start translate-y-1/2;
 }
 
 .feature-tooltip {

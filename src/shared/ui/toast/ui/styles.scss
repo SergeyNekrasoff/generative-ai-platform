@@ -6,15 +6,15 @@
     animation: slide-up 0.4s ease;
 
     &_type-success {
-      @apply bg-green_dark shadow-md shadow-green_darker;
+      @apply bg-green_dark shadow-md;
     }
 
     &_type-error {
-      @apply bg-red_dark shadow-md shadow-red_darker;
+      @apply bg-red_dark shadow-md;
     }
 
     &_type-info {
-      @apply bg-blue_dark shadow-md shadow-blue_darker;
+      @apply bg-blue_dark shadow-md;
     }
   }
 
